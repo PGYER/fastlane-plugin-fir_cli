@@ -1,0 +1,3 @@
+lane :test do
+  fir_cli
+end
