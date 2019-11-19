@@ -18,8 +18,9 @@ module Fastlane
           skip_update_icon: params[:skip_update_icon],
           changelog: params[:changelog],
           open: params[:open],
-          password: params[:password]
-        }
+          password: params[:password],
+          short: params[:short]
+        }.reject {|_k, v| v.nil?}
 
         FirHelper.publish(fir_args, options)
       end 
@@ -54,6 +55,10 @@ module Fastlane
                                        description: "FILE APP PATH",
                                        default_value: nil,
                                        optional: true),
+          FastlaneCore::ConfigItem.new(key: :short,
+                                       env_name: "FIR_APP_short",
+                                       description: "fir short",
+                                       optional: true),
           FastlaneCore::ConfigItem.new(key: :force_pin_history,
                                       env_name: "FIR_APP_FORCE_PIN_HISTORY",
                                       description: "pin this release to download page",
@@ -67,7 +72,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :changelog,
                                       env_name: "FIR_APP_CHANGELOG",
                                       description: "changelog path or content",
-                                      default_value: false,
+                                      default_value: nil,
                                       optional: true),
           FastlaneCore::ConfigItem.new(key: :open,
                                        env_name: "FIR_APP_OPEN",
