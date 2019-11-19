@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'atpking@gmail.com'
 
   spec.summary       = 'upload ipa or apk to fir.im'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-fir_cli"
+  spec.homepage      = "https://github.com/FIRHQ/fastlane-plugin-fir_cli"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
@@ -21,8 +21,7 @@ Gem::Specification.new do |spec|
   # Don't add a dependency to fastlane or fastlane_re
   # since this would cause a circular dependency
 
-  spec.add_dependency 'fir-cli', '~> 1.7.3'
-  spec.add_dependency 'byebug'
+  spec.add_dependency 'fir-cli', '~> 1.7.4'
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('byebug')

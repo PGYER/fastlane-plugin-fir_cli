@@ -12,28 +12,48 @@ fastlane add_plugin fir_cli
 
 ## About fir_cli
 
-upload ipa or apk to fir.im
+Using fir-cli gem, upload ipa or apk to fir.im in fastlane directly.
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+内置 fir-cli 这个gem, 直接在fastlane 中直接将文件上传到 fir.im
+
+## params 
+
+run `fastlane action fir_cli` in terminal to lookup the details.
+
+在命令行中运行 `fastlane action fir_cli` 查看细节.
+
 
 ## Example
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+run fir_plugin in Fastfile
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
-
-## Run tests for this plugin
-
-To run both the tests, and code style validation, run
+在 Fastfile 文件中 引入
 
 ```
-rake
+default_platform(:ios)
+
+platform :ios do
+  lane :gofir do
+    gym export_method: "ad-hoc"
+    fir_cli api_token: "YOUR FIR API TOKEN"
+  end
+end
+
+# run `fastlane gofir` in terminal to start lane gofir
 ```
 
-To automatically fix many of the styling issues, use
+
+
+run fir plugin in bash
+在终端跑这个插件
+
+
 ```
-rubocop -a
+fastlane run fir_cli api_token:"YOUR_FIR_API_TOKEN" specify_file_path:"YOUR IPA OR APK FILE PATH"
 ```
+
+
+
 
 ## Issues and Feedback
 

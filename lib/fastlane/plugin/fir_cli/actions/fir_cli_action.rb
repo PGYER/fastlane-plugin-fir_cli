@@ -1,6 +1,6 @@
 require 'fastlane/action'
 require 'fir'
-require 'byebug'
+# require 'byebug'
 require_relative '../helper/fir_cli_helper'
 
 module Fastlane
@@ -9,7 +9,6 @@ module Fastlane
       
       def self.run(params)
         UI.message("The fir_cli plugin is working!")
-        byebug
 
         fir_args = find_app_location(params[:specify_file_path])
         options = {
@@ -35,11 +34,12 @@ module Fastlane
 
       def self.return_value
         # If your method provides a return value, you can describe here what it does
+        "fir app info"
       end
 
       def self.details
         # Optional:
-        "upload ipa or apk to fir.im"
+        "invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli"
       end
 
       def self.available_options
