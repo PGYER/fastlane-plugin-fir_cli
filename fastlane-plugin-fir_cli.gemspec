@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   # since this would cause a circular dependency
 
   spec.add_dependency 'fir-cli', '~> 1.7.3'
+  spec.add_dependency 'byebug'
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('byebug')

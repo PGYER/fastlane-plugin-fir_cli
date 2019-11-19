@@ -1,5 +1,6 @@
 require 'fastlane/action'
 require 'fir'
+require 'byebug'
 require_relative '../helper/fir_cli_helper'
 
 module Fastlane
@@ -8,8 +9,7 @@ module Fastlane
       
       def self.run(params)
         UI.message("The fir_cli plugin is working!")
-        puts params[:api_token]
-        UI.message("aaaaa" + params[:api_token].to_s)
+        byebug
 
         fir_args = find_app_location(params[:specify_file_path])
         options = {
