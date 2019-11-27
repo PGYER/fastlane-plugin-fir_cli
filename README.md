@@ -67,6 +67,15 @@ For any other issues and feedback about this plugin, please submit it to this re
 
 If you have trouble using plugins, check out the [Plugins Troubleshooting](https://docs.fastlane.tools/plugins/plugins-troubleshooting/) guide.
 
+
+## Buy me a coffee
+
+Thanks!
+
+感谢鼓励作者维护 !
+
+![luckin](luckin_coffee.png)
+
 ## Using _fastlane_ Plugins
 
 For more information about how the `fastlane` plugin system works, check out the [Plugins documentation](https://docs.fastlane.tools/plugins/create-plugin/).
