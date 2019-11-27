@@ -26,7 +26,7 @@ module Fastlane
       end 
 
       def self.description
-        "upload ipa or apk to fir.im"
+        "upload ipa or apk to fir.im using fir-cli (This plugin is maintained by fir.im official)"
       end
 
       def self.authors
