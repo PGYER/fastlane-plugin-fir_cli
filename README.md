@@ -35,7 +35,10 @@ default_platform(:ios)
 platform :ios do
   lane :gofir do
     gym export_method: "ad-hoc"
+    
+    # 多个参数 可以使用逗号 分离  
     fir_cli api_token: "YOUR FIR API TOKEN"
+    
   end
 end
 
