@@ -1,5 +1,6 @@
 source('https://rubygems.org')
 
+gem 'byebug'
 gemspec
 
 plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')

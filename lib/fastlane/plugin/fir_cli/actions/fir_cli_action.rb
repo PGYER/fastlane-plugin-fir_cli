@@ -16,12 +16,12 @@ module Fastlane
           specify_file_path: params[:specify_file_path],
           force_pin_history: params[:force_pin_history],
           skip_update_icon: params[:skip_update_icon],
+          specify_icon_file: params[:specify_icon_file],
           changelog: params[:changelog],
           open: params[:open],
           password: params[:password],
           short: params[:short]
         }.reject {|_k, v| v.nil?}
-
         FirHelper.publish(fir_args, options)
       end 
 
@@ -69,6 +69,11 @@ module Fastlane
                                         description: "skip upload icon",
                                         default_value: false,
                                         optional: true),
+          FastlaneCore::ConfigItem.new(key: :specify_icon_file,
+                                          env_name: "FIR_SPECIFY_ICON_FILE_PATH",
+                                          description: "APP ICON FILE PATH",
+                                          default_value: nil,
+                                          optional: true),
           FastlaneCore::ConfigItem.new(key: :changelog,
                                       env_name: "FIR_APP_CHANGELOG",
                                       description: "changelog path or content",
@@ -104,8 +109,21 @@ module Fastlane
     class FirHelper
       include FIR::Util
 
+      
       class << self
         def logger
+          @logger ||= Logger.new(STDOUT)
+        end
+      end
+      
+    end
+
+    class FIR::AppUploader
+      def logger
+        self.class.logger
+      end
+      class << self
+        def logger 
           @logger ||= Logger.new(STDOUT)
         end
       end

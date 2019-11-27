@@ -45,6 +45,7 @@ end
 
 
 run fir plugin in bash
+
 在终端跑这个插件
 
 
