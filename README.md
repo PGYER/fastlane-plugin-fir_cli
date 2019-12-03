@@ -72,7 +72,7 @@ If you have trouble using plugins, check out the [Plugins Troubleshooting](https
 
 Thanks!
 
-感谢鼓励作者维护 !
+感谢鼓励作者维护!
 
 ![luckin](luckin_coffee.png)
 
