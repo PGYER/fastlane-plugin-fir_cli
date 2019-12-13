@@ -22,7 +22,8 @@ module Fastlane
           password: params[:password],
           short: params[:short],
           dingtalk_access_token: params[:dingtalk_access_token],
-          switch_to_qiniu: params[:switch_to_qiniu]
+          switch_to_qiniu: params[:switch_to_qiniu],
+          dingtalk_custom_message: params[:dingtalk_custom_message]
         }.reject {|_k, v| v.nil?}
         FirHelper.publish(fir_args, options)
       end 
@@ -99,6 +100,10 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :dingtalk_access_token,
                                        env_name: "FIR_DINGTALK_ACCESS_TOKEN",
                                        description: "dingtalk_access_token",
+                                       optional: true),
+          FastlaneCore::ConfigItem.new(key: :dingtalk_custom_message,
+                                       env_name: "FIR_DINGTALK_CUSTOM_MESSAGE",
+                                       description: "dingtalk custom message",
                                        optional: true)
 
         ]
