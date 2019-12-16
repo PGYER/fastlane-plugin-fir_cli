@@ -23,24 +23,25 @@ run `fastlane action fir_cli` in terminal to lookup the details.
 在命令行中运行 `fastlane action fir_cli` 查看细节.
 
 ```
-+-------------------------+-----------------------------------+-----------------------------+---------+
-|                                           fir_cli Options                                           |
-+-------------------------+-----------------------------------+-----------------------------+---------+
-| Key                     | Description                       | Env Var                     | Default |
-+-------------------------+-----------------------------------+-----------------------------+---------+
-| api_token               | A description of your option      | FIR_CLI_API_TOKEN           |         |
-| specify_file_path       | FILE APP PATH                     | FIR_SPECIFY_FILE_PATH       |         |
-| short                   | fir short                         | FIR_APP_short               |         |
-| force_pin_history       | pin this release to download page | FIR_APP_FORCE_PIN_HISTORY   | false   |
-| skip_update_icon        | skip upload icon                  | FIR_APP_SKIP_UPDATE_ICON    | false   |
-| specify_icon_file       | APP ICON FILE PATH                | FIR_SPECIFY_ICON_FILE_PATH  |         |
-| changelog               | changelog path or content         | FIR_APP_CHANGELOG           |         |
-| open                    | true/false if open for everyone   | FIR_APP_OPEN                | true    |
-| password                | Set password for app              | FIR_APP_PASSWORD            |         |
-| switch_to_qiniu         | switch to qiniu upload            | FIR_SWITCH_TO_QINIU         | false   |
-| dingtalk_access_token   | dingtalk_access_token             | FIR_DINGTALK_ACCESS_TOKEN   |         |
-| dingtalk_custom_message | dingtalk custom message           | FIR_DINGTALK_CUSTOM_MESSAGE |         |
-+-------------------------+-----------------------------------+-----------------------------+---------+
++-------------------------+------------------------------------------+-----------------------------+---------+
+|                                              fir_cli Options                                               |
++-------------------------+------------------------------------------+-----------------------------+---------+
+| Key                     | Description                              | Env Var                     | Default |
++-------------------------+------------------------------------------+-----------------------------+---------+
+| api_token               | A description of your option             | FIR_CLI_API_TOKEN           |         |
+| specify_file_path       | FILE APP PATH                            | FIR_SPECIFY_FILE_PATH       |         |
+| short                   | fir short                                | FIR_APP_short               |         |
+| force_pin_history       | pin this release to download page        | FIR_APP_FORCE_PIN_HISTORY   | false   |
+| skip_update_icon        | skip upload icon                         | FIR_APP_SKIP_UPDATE_ICON    | false   |
+| specify_icon_file       | APP ICON FILE PATH                       | FIR_SPECIFY_ICON_FILE_PATH  |         |
+| changelog               | changelog path or content                | FIR_APP_CHANGELOG           |         |
+| open                    | true/false if open for everyone          | FIR_APP_OPEN                | true    |
+| password                | Set password for app                     | FIR_APP_PASSWORD            |         |
+| switch_to_qiniu         | switch to qiniu upload                   | FIR_SWITCH_TO_QINIU         | false   |
+| need_release_id         | would build download url with release id | fir_need_release_id         | false   |
+| dingtalk_access_token   | dingtalk_access_token                    | FIR_DINGTALK_ACCESS_TOKEN   |         |
+| dingtalk_custom_message | dingtalk custom message                  | FIR_DINGTALK_CUSTOM_MESSAGE |         |
++-------------------------+------------------------------------------+-----------------------------+---------+
 ```
 
 
@@ -57,8 +58,8 @@ platform :ios do
   lane :gofir do
     gym export_method: "ad-hoc"
     
-    # 多个参数 可以使用逗号 分离  
-    fir_cli api_token: "YOUR FIR API TOKEN"
+    # 多个参数 可以使用逗号(, )分离   
+    fir_cli api_token: "YOUR FIR API TOKEN",  changelog: "Hello fir.im"
     
   end
 end
