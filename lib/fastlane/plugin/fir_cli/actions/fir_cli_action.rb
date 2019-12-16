@@ -135,7 +135,7 @@ module Fastlane
     class FirHelper
       include FIR::Util
 
-      
+      FIR::VERSION = "#{FIR::VERSION}-Fastlane-#{Fastlane::FirCli::VERSION}"
       class << self
         def logger
           @logger ||= Logger.new(STDOUT)
