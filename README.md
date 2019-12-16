@@ -30,7 +30,7 @@ run `fastlane action fir_cli` in terminal to lookup the details.
 +-------------------------+------------------------------------------+-----------------------------+---------+
 | api_token               | A description of your option             | FIR_CLI_API_TOKEN           |         |
 | specify_file_path       | FILE APP PATH                            | FIR_SPECIFY_FILE_PATH       |         |
-| short                   | fir short                                | FIR_APP_short               |         |
+| short                   | fir short                                | FIR_APP_SHORT               |         |
 | force_pin_history       | pin this release to download page        | FIR_APP_FORCE_PIN_HISTORY   | false   |
 | skip_update_icon        | skip upload icon                         | FIR_APP_SKIP_UPDATE_ICON    | false   |
 | specify_icon_file       | APP ICON FILE PATH                       | FIR_SPECIFY_ICON_FILE_PATH  |         |
@@ -38,7 +38,7 @@ run `fastlane action fir_cli` in terminal to lookup the details.
 | open                    | true/false if open for everyone          | FIR_APP_OPEN                | true    |
 | password                | Set password for app                     | FIR_APP_PASSWORD            |         |
 | switch_to_qiniu         | switch to qiniu upload                   | FIR_SWITCH_TO_QINIU         | false   |
-| need_release_id         | would build download url with release id | fir_need_release_id         | false   |
+| need_release_id         | would build download url with release id | FIR_NEED_RELEASE_ID         | false   |
 | dingtalk_access_token   | dingtalk_access_token                    | FIR_DINGTALK_ACCESS_TOKEN   |         |
 | dingtalk_custom_message | dingtalk custom message                  | FIR_DINGTALK_CUSTOM_MESSAGE |         |
 +-------------------------+------------------------------------------+-----------------------------+---------+
