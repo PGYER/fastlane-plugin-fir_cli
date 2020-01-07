@@ -114,7 +114,16 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :dingtalk_custom_message,
                                        env_name: "FIR_DINGTALK_CUSTOM_MESSAGE",
                                        description: "dingtalk custom message",
-                                       optional: true)
+                                       optional: true),
+          FastlaneCore::ConfigItem.new(key: :dingtalk_at_phones,
+                                        env_name: "FIR_DINGTALK_AT_PHONES",
+                                        description: "dingtalk at phones, split with ','",
+                                        optional: true),
+          FastlaneCore::ConfigItem.new(key: :dingtalk_at_all,
+                                        env_name: "FIR_DINGTALK_AT_ALL",
+                                        description: "dingtalk at all people",
+                                        type: Boolean,
+                                        optional: true)
 
         ]
       end
