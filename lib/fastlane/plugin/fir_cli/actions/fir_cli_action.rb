@@ -24,7 +24,9 @@ module Fastlane
           short: params[:short],
           dingtalk_access_token: params[:dingtalk_access_token],
           switch_to_qiniu: params[:switch_to_qiniu],
-          dingtalk_custom_message: params[:dingtalk_custom_message]
+          dingtalk_custom_message: params[:dingtalk_custom_message],
+          dingtalk_at_phones: params[:dingtalk_at_phones],
+          dingtalk_at_all: params[:dingtalk_at_all]
         }.reject {|_k, v| v.nil?}
         FirHelper.publish(fir_args, options)
       end 
