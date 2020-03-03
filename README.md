@@ -83,6 +83,16 @@ run fir plugin in bash
 fastlane run fir_cli api_token:"YOUR_FIR_API_TOKEN" specify_file_path:"YOUR IPA OR APK FILE PATH"
 ```
 
+## About another plugin fastlane-plugin-firim
+
+关于 另一个插件 https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim 
+
+特别感谢 作者 whlsxl 对 firim 插件的辛勤开发, 这款插件代码优秀质量可靠, 是我学习的典范
+
+然而因为 2020年02月 .im 域名不再支持备案, 所以导致fir.im 无法继续支撑 fir.im 域名
+最终导致 whlsxl 的 firim <= 0.2.4  的情况下, 可能会有些问题
+
+希望 whlsxl 同学能够看到, 解决的方案
 
 
 
