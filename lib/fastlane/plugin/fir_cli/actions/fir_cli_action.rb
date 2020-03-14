@@ -28,7 +28,9 @@ module Fastlane
           dingtalk_at_phones: params[:dingtalk_at_phones],
           dingtalk_at_all: params[:dingtalk_at_all]
         }.reject {|_k, v| v.nil?}
-        FirHelper.publish(fir_args, options)
+        answer = FirHelper.publish(fir_args, options)
+        UI.message("fastlane-plugin-fir_cli answer: #{answer}")
+        answer
       end 
 
       def self.description
