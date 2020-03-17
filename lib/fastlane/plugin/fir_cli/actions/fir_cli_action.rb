@@ -26,7 +26,11 @@ module Fastlane
           switch_to_qiniu: params[:switch_to_qiniu],
           dingtalk_custom_message: params[:dingtalk_custom_message],
           dingtalk_at_phones: params[:dingtalk_at_phones],
-          dingtalk_at_all: params[:dingtalk_at_all]
+          dingtalk_at_all: params[:dingtalk_at_all],
+          
+          feishu_access_token: params[:feishu_access_token],
+          feishu_custom_message: params[:feishu_custom_message]
+ 
         }.reject {|_k, v| v.nil?}
         answer = FirHelper.publish(fir_args, options)
         UI.message("fastlane-plugin-fir_cli answer: #{answer}")
@@ -127,7 +131,15 @@ module Fastlane
                                         env_name: "FIR_DINGTALK_AT_ALL",
                                         description: "dingtalk at all people",
                                         type: Boolean,
-                                        optional: true)
+                                        optional: true),
+          FastlaneCore::ConfigItem.new(key: :feishu_access_token,
+                                          env_name: "FIR_FEISHU_ACCESS_TOKEN",
+                                          description: "feishu_access_token",
+                                          optional: true),
+          FastlaneCore::ConfigItem.new(key: :feishu_custom_message,
+                                          env_name: "FIR_FEISHU_CUSTOM_MESSAGE",
+                                          description: "feishu custom message",
+                                          optional: true),
 
         ]
       end
