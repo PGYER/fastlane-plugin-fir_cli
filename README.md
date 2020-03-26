@@ -29,25 +29,33 @@ most of params in this plugin copied directly from fir-cli publish params ([fir-
 
 
 ```
-+-------------------------+------------------------------------------+-----------------------------+---------+
-|                                              fir_cli Options                                               |
-+-------------------------+------------------------------------------+-----------------------------+---------+
-| Key                     | Description                              | Env Var                     | Default |
-+-------------------------+------------------------------------------+-----------------------------+---------+
-| api_token               | A description of your option             | FIR_CLI_API_TOKEN           |         |
-| specify_file_path       | FILE APP PATH                            | FIR_SPECIFY_FILE_PATH       |         |
-| short                   | fir short                                | FIR_APP_SHORT               |         |
-| force_pin_history       | pin this release to download page        | FIR_APP_FORCE_PIN_HISTORY   | false   |
-| skip_update_icon        | skip upload icon                         | FIR_APP_SKIP_UPDATE_ICON    | false   |
-| specify_icon_file       | APP ICON FILE PATH                       | FIR_SPECIFY_ICON_FILE_PATH  |         |
-| changelog               | changelog path or content                | FIR_APP_CHANGELOG           |         |
-| open                    | true/false if open for everyone          | FIR_APP_OPEN                | true    |
-| password                | Set password for app                     | FIR_APP_PASSWORD            |         |
-| switch_to_qiniu         | switch to qiniu upload                   | FIR_SWITCH_TO_QINIU         | false   |
-| need_release_id         | would build download url with release id | FIR_NEED_RELEASE_ID         | false   |
-| dingtalk_access_token   | dingtalk_access_token                    | FIR_DINGTALK_ACCESS_TOKEN   |         |
-| dingtalk_custom_message | dingtalk custom message                  | FIR_DINGTALK_CUSTOM_MESSAGE |         |
-+-------------------------+------------------------------------------+-----------------------------+---------+
++-------------------------+------------------------------------+-----------------------------+---------+
+|                                           fir_cli Options                                            |
++-------------------------+------------------------------------+-----------------------------+---------+
+| Key                     | Description                        | Env Var                     | Default |
++-------------------------+------------------------------------+-----------------------------+---------+
+| api_token               | A description of your option       | FIR_CLI_API_TOKEN           |         |
+| specify_file_path       | FILE APP PATH                      | FIR_SPECIFY_FILE_PATH       |         |
+| short                   | fir short                          | FIR_APP_SHORT               |         |
+| force_pin_history       | pin this release to download page  | FIR_APP_FORCE_PIN_HISTORY   | false   |
+| skip_update_icon        | skip upload icon                   | FIR_APP_SKIP_UPDATE_ICON    | false   |
+| specify_icon_file       | APP ICON FILE PATH                 | FIR_SPECIFY_ICON_FILE_PATH  |         |
+| changelog               | changelog path or content          | FIR_APP_CHANGELOG           |         |
+| open                    | true/false if open for everyone    | FIR_APP_OPEN                | true    |
+| password                | Set password for app               | FIR_APP_PASSWORD            |         |
+| switch_to_qiniu         | switch to qiniu upload             | FIR_SWITCH_TO_QINIU         | false   |
+| need_release_id         | would build download url with      | FIR_NEED_RELEASE_ID         | false   |
+|                         | release id                         |                             |         |
+| dingtalk_access_token   | dingtalk_access_token              | FIR_DINGTALK_ACCESS_TOKEN   |         |
+| dingtalk_custom_message | dingtalk custom message            | FIR_DINGTALK_CUSTOM_MESSAGE |         |
+| dingtalk_at_phones      | dingtalk at phones, split with ',' | FIR_DINGTALK_AT_PHONES      |         |
+| dingtalk_at_all         | dingtalk at all people             | FIR_DINGTALK_AT_ALL         |         |
+| feishu_access_token     | feishu_access_token                | FIR_FEISHU_ACCESS_TOKEN     |         |
+| feishu_custom_message   | feishu custom message              | FIR_FEISHU_CUSTOM_MESSAGE   |         |
+| wxwork_access_token     | wechat work webhook access_token   | FIR_WXWORK_ACCESS_TOKEN     |         |
+| wxwork_pic_url          | wechat work webhook pic url        | FIR_WXWORK_PIC_URL          |         |
+| wxwork_custom_message   | wechat work custom message         | FIR_WXWORK_CUSTOM_MESSAGE   |         |
++-------------------------+------------------------------------+-----------------------------+---------+
 ```
 
 
