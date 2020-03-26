@@ -29,7 +29,11 @@ module Fastlane
           dingtalk_at_all: params[:dingtalk_at_all],
           
           feishu_access_token: params[:feishu_access_token],
-          feishu_custom_message: params[:feishu_custom_message]
+          feishu_custom_message: params[:feishu_custom_message],
+
+          wxwork_access_token: params[:wxwork_access_token],
+          wxwork_custom_message: params[:wxwork_custom_message],
+          wxwork_pic_url: params[:wxwork_pic_url]
  
         }.reject {|_k, v| v.nil?}
         answer = FirHelper.publish(fir_args, options)
@@ -132,6 +136,7 @@ module Fastlane
                                         description: "dingtalk at all people",
                                         type: Boolean,
                                         optional: true),
+
           FastlaneCore::ConfigItem.new(key: :feishu_access_token,
                                           env_name: "FIR_FEISHU_ACCESS_TOKEN",
                                           description: "feishu_access_token",
@@ -140,6 +145,20 @@ module Fastlane
                                           env_name: "FIR_FEISHU_CUSTOM_MESSAGE",
                                           description: "feishu custom message",
                                           optional: true),
+
+          FastlaneCore::ConfigItem.new(key: :wxwork_access_token,
+                                            env_name: "FIR_WXWORK_ACCESS_TOKEN",
+                                            description: "wechat work webhook access_token",
+                                            optional: true),
+
+          FastlaneCore::ConfigItem.new(key: :wxwork_pic_url,
+                                              env_name: "FIR_WXWORK_PIC_URL",
+                                              description: "wechat work webhook pic url",
+                                              optional: true),
+          FastlaneCore::ConfigItem.new(key: :wxwork_custom_message,
+                                              env_name: "FIR_WXWORK_CUSTOM_MESSAGE",
+                                              description: "wechat work custom message",
+                                              optional: true)
 
         ]
       end
