@@ -25,7 +25,7 @@ run `fastlane action fir_cli` in terminal to lookup the details.
 
 most of params in this plugin copied directly from fir-cli publish params ([fir-cli github](https://github.com/FIRHQ/fir-cli/))
 
-插件里的绝大多数参数都是从 fir-cli 的 publish 的参数 ([fir-cli github](https://github.com/FIRHQ/fir-cli/)) 直接拷贝的
+插件里的绝大多数参数都是从 fir-cli 的 publish 的参数 ([fir-cli github (https://github.com/FIRHQ/fir-cli/)](https://github.com/FIRHQ/fir-cli/)) 直接拷贝的
 
 
 ```
