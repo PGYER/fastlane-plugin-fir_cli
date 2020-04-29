@@ -120,7 +120,7 @@ If you have trouble using plugins, check out the [Plugins Troubleshooting](https
 
 Thanks!
 
-感谢鼓励作者维护!
+支付宝打赏 感谢鼓励作者维护!
 
 ![luckin](luckin_coffee.png)
 
