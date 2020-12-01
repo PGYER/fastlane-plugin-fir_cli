@@ -36,7 +36,7 @@ module Fastlane
           wxwork_pic_url: params[:wxwork_pic_url]
  
         }.reject {|_k, v| v.nil?}
-        answer = FirHelper.publish(fir_args, options)
+        answer = Helper::FirHelper.publish(fir_args, options)
         UI.message("fastlane-plugin-fir_cli answer: #{answer}")
         answer
       end 
@@ -85,6 +85,7 @@ module Fastlane
                                        env_name: "FIR_APP_SKIP_UPDATE_ICON",
                                        description: "skip upload icon",
                                        default_value: false,
+                                       type: Boolean,
                                        optional: true),
           FastlaneCore::ConfigItem.new(key: :specify_icon_file,
                                        env_name: "FIR_SPECIFY_ICON_FILE_PATH",
@@ -176,27 +177,5 @@ module Fastlane
       end
     end
 
-    class FirHelper
-      include FIR::Util
-
-      FIR::VERSION = "#{FIR::VERSION}-Fastlane-#{Fastlane::FirCli::VERSION}"
-      class << self
-        def logger
-          @logger ||= Logger.new(STDOUT)
-        end
-      end
-      
-    end
-
-    class FIR::AppUploader
-      def logger
-        self.class.logger
-      end
-      class << self
-        def logger 
-          @logger ||= Logger.new(STDOUT)
-        end
-      end
-    end
   end
 end
