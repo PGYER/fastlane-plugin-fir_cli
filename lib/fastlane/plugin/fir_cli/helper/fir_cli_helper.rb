@@ -12,5 +12,28 @@ module Fastlane
         UI.message("Hello from the fir_cli plugin helper!")
       end
     end
+
+    class FirHelper
+      include FIR::Util
+
+      FIR::VERSION = "#{FIR::VERSION}-Fastlane-#{Fastlane::FirCli::VERSION}"
+      class << self
+        def logger
+          @logger ||= Logger.new(STDOUT)
+        end
+      end
+      
+    end
+
+    class FIR::AppUploader
+      def logger
+        self.class.logger
+      end
+      class << self
+        def logger 
+          @logger ||= Logger.new(STDOUT)
+        end
+      end
+    end
   end
 end
