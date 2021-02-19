@@ -6,7 +6,7 @@ require_relative '../helper/fir_cli_helper'
 module Fastlane
   module Actions
     class FirCliAction < Action
-      
+
       def self.run(params)
         UI.message("The fir_cli plugin is working!")
 
@@ -27,19 +27,20 @@ module Fastlane
           dingtalk_custom_message: params[:dingtalk_custom_message],
           dingtalk_at_phones: params[:dingtalk_at_phones],
           dingtalk_at_all: params[:dingtalk_at_all],
-          
+          dingtalk_secret: params[:dingtalk_secret],
+
           feishu_access_token: params[:feishu_access_token],
           feishu_custom_message: params[:feishu_custom_message],
 
           wxwork_access_token: params[:wxwork_access_token],
           wxwork_custom_message: params[:wxwork_custom_message],
           wxwork_pic_url: params[:wxwork_pic_url]
- 
+
         }.reject {|_k, v| v.nil?}
         answer = Helper::FirHelper.publish(fir_args, options)
         UI.message("fastlane-plugin-fir_cli answer: #{answer}")
         answer
-      end 
+      end
 
       def self.description
         "upload ipa or apk to fir.im using fir-cli (This plugin is maintained by fir.im official)"
@@ -137,6 +138,11 @@ module Fastlane
                                         description: "dingtalk at all people",
                                         type: Boolean,
                                         optional: true),
+
+          FastlaneCore::ConfigItem.new(key: :dingtalk_secret,
+                                          env_name: "FIR_DINGTALK_SECRET",
+                                          description: "Dingtalk secret code (eg: SECxxxxx)",
+                                          optional: true),
 
           FastlaneCore::ConfigItem.new(key: :feishu_access_token,
                                           env_name: "FIR_FEISHU_ACCESS_TOKEN",
