@@ -34,7 +34,7 @@ module Fastlane
 
           wxwork_access_token: params[:wxwork_access_token],
           wxwork_custom_message: params[:wxwork_custom_message],
-          wxwork_pic_url: params[:wxwork_pic_url],
+          wxwork_pic_url: params[:wxwork_pic_url]
 
         }.reject {|_k, v| v.nil?}
         if options[:wxwork_access_token].blank?
