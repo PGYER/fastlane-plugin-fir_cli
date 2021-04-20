@@ -35,9 +35,13 @@ module Fastlane
           wxwork_access_token: params[:wxwork_access_token],
           wxwork_custom_message: params[:wxwork_custom_message],
           wxwork_pic_url: params[:wxwork_pic_url],
-          wxwork_webhook: ""
-          
+
         }.reject {|_k, v| v.nil?}
+        if options[:wxwork_access_token].blank?
+          options[:wxwork_webhook] = ""
+        else
+          options[:wxwork_webhook] = nil
+        end
         answer = Helper::FirHelper.publish(fir_args, options)
         UI.message("fastlane-plugin-fir_cli answer: #{answer}")
         answer
