@@ -28,6 +28,7 @@ module Fastlane
           dingtalk_at_phones: params[:dingtalk_at_phones],
           dingtalk_at_all: params[:dingtalk_at_all],
           dingtalk_secret: params[:dingtalk_secret],
+          oversea_turbo: params[:oversea_turbo],
 
           feishu_access_token: params[:feishu_access_token],
           feishu_custom_message: params[:feishu_custom_message],
@@ -143,6 +144,12 @@ module Fastlane
                                           env_name: "FIR_DINGTALK_SECRET",
                                           description: "Dingtalk secret code (eg: SECxxxxx)",
                                           optional: true),
+
+          
+          FastlaneCore::ConfigItem.new(key: :dingtalk_secret,
+                                            env_name: "FIR_OVERSEA_TURBO",
+                                            description: "fir oversea turbo, increase upload speed for oversea users",
+                                            optional: true),
 
           FastlaneCore::ConfigItem.new(key: :feishu_access_token,
                                           env_name: "FIR_FEISHU_ACCESS_TOKEN",
