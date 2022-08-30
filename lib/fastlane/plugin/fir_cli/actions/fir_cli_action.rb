@@ -149,6 +149,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :dingtalk_secret,
                                             env_name: "FIR_OVERSEA_TURBO",
                                             description: "fir oversea turbo, increase upload speed for oversea users",
+                                            type: Boolean,
                                             optional: true),
 
           FastlaneCore::ConfigItem.new(key: :feishu_access_token,
