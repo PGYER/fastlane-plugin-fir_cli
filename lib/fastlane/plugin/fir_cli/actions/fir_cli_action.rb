@@ -1,12 +1,11 @@
-require 'fastlane/action'
-require 'fir'
+require "fastlane/action"
+require "fir"
 # require 'byebug'
-require_relative '../helper/fir_cli_helper'
+require_relative "../helper/fir_cli_helper"
 
 module Fastlane
   module Actions
     class FirCliAction < Action
-
       def self.run(params)
         UI.message("The fir_cli plugin is working!")
 
@@ -37,9 +36,9 @@ module Fastlane
 
           wxwork_access_token: params[:wxwork_access_token],
           wxwork_custom_message: params[:wxwork_custom_message],
-          wxwork_pic_url: params[:wxwork_pic_url]
+          wxwork_pic_url: params[:wxwork_pic_url],
 
-        }.reject {|_k, v| v.nil?}
+        }.reject { |_k, v| v.nil? }
         answer = Helper::FirHelper.publish(fir_args, options)
         UI.message("fastlane-plugin-fir_cli answer: #{answer}")
         answer
@@ -140,49 +139,48 @@ module Fastlane
                                        description: "dingtalk custom message",
                                        optional: true),
           FastlaneCore::ConfigItem.new(key: :dingtalk_at_phones,
-                                        env_name: "FIR_DINGTALK_AT_PHONES",
-                                        description: "dingtalk at phones, split with ','",
-                                        optional: true),
+                                       env_name: "FIR_DINGTALK_AT_PHONES",
+                                       description: "dingtalk at phones, split with ','",
+                                       optional: true),
           FastlaneCore::ConfigItem.new(key: :dingtalk_at_all,
-                                        env_name: "FIR_DINGTALK_AT_ALL",
-                                        description: "dingtalk at all people",
-                                        type: Boolean,
-                                        optional: true),
+                                       env_name: "FIR_DINGTALK_AT_ALL",
+                                       description: "dingtalk at all people",
+                                       type: Boolean,
+                                       optional: true),
 
           FastlaneCore::ConfigItem.new(key: :dingtalk_secret,
-                                          env_name: "FIR_DINGTALK_SECRET",
-                                          description: "Dingtalk secret code (eg: SECxxxxx)",
-                                          optional: true),
+                                       env_name: "FIR_DINGTALK_SECRET",
+                                       description: "Dingtalk secret code (eg: SECxxxxx)",
+                                       optional: true),
 
-          
-          FastlaneCore::ConfigItem.new(key: :dingtalk_secret,
-                                            env_name: "FIR_OVERSEA_TURBO",
-                                            description: "fir oversea turbo, increase upload speed for oversea users",
-                                            type: Boolean,
-                                            optional: true),
+          FastlaneCore::ConfigItem.new(key: :oversea_turbo,
+                                       env_name: "FIR_OVERSEA_TURBO",
+                                       description: "fir oversea turbo, increase upload speed for oversea users",
+                                       type: Boolean,
+                                       optional: true),
 
           FastlaneCore::ConfigItem.new(key: :feishu_access_token,
-                                          env_name: "FIR_FEISHU_ACCESS_TOKEN",
-                                          description: "feishu_access_token",
-                                          optional: true),
+                                       env_name: "FIR_FEISHU_ACCESS_TOKEN",
+                                       description: "feishu_access_token",
+                                       optional: true),
           FastlaneCore::ConfigItem.new(key: :feishu_custom_message,
-                                          env_name: "FIR_FEISHU_CUSTOM_MESSAGE",
-                                          description: "feishu custom message",
-                                          optional: true),
+                                       env_name: "FIR_FEISHU_CUSTOM_MESSAGE",
+                                       description: "feishu custom message",
+                                       optional: true),
 
           FastlaneCore::ConfigItem.new(key: :wxwork_access_token,
-                                            env_name: "FIR_WXWORK_ACCESS_TOKEN",
-                                            description: "wechat work webhook access_token",
-                                            optional: true),
+                                       env_name: "FIR_WXWORK_ACCESS_TOKEN",
+                                       description: "wechat work webhook access_token",
+                                       optional: true),
 
           FastlaneCore::ConfigItem.new(key: :wxwork_pic_url,
-                                              env_name: "FIR_WXWORK_PIC_URL",
-                                              description: "wechat work webhook pic url",
-                                              optional: true),
+                                       env_name: "FIR_WXWORK_PIC_URL",
+                                       description: "wechat work webhook pic url",
+                                       optional: true),
           FastlaneCore::ConfigItem.new(key: :wxwork_custom_message,
-                                              env_name: "FIR_WXWORK_CUSTOM_MESSAGE",
-                                              description: "wechat work custom message",
-                                              optional: true)
+                                       env_name: "FIR_WXWORK_CUSTOM_MESSAGE",
+                                       description: "wechat work custom message",
+                                       optional: true),
 
         ]
       end
@@ -199,6 +197,5 @@ module Fastlane
         file_path || Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH] || Actions.lane_context[SharedValues::IPA_OUTPUT_PATH]
       end
     end
-
   end
 end
