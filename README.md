@@ -17,7 +17,7 @@ Using fir-cli gem, upload ipa or apk to fir.im in fastlane directly.
 
 内置 fir-cli 这个gem, 直接在fastlane 中直接将文件上传到 fir.im
 
-## params 
+## params
 
 run `fastlane action fir_cli` in terminal to lookup the details.
 
@@ -72,10 +72,10 @@ default_platform(:ios)
 platform :ios do
   lane :gofir do
     gym export_method: "ad-hoc"
-    
-    # 多个参数 可以使用逗号(, )分离   
+
+    # 多个参数 可以使用逗号(, )分离
     fir_cli api_token: "YOUR FIR API TOKEN",  changelog: "Hello fir.im"
-    
+
   end
 end
 
