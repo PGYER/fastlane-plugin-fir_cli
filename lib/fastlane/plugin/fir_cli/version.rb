@@ -1,5 +1,5 @@
 module Fastlane
   module FirCli
-    VERSION = "2.0.19"
+    VERSION = "2.0.21"
   end
 end
